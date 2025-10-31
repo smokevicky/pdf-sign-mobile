@@ -1,14 +1,25 @@
-import React from 'react';
-import './App.css';
+
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { store } from './store';
+import { UploadPage, SignPage, SuccessPage } from '@pages';
 import { Header } from '@atoms';
-import { UploadPage } from '@pages';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <UploadPage />
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <Header />
+        <Router>
+          <Routes>
+            <Route path="/upload" element={<UploadPage />} />
+            <Route path="/sign" element={<SignPage />} />
+            <Route path="/success" element={<SuccessPage />} />
+            <Route path="*" element={<Navigate to="/upload" replace />} />
+          </Routes>
+        </Router>
+      </div>
+    </Provider>
   );
 }
 
