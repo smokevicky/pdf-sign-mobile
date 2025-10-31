@@ -2,7 +2,7 @@ import { keyframes } from "@emotion/react";
 import { ButtonBar } from "@molecules";
 import { Box, Typography } from "@mui/material";
 import { RootState } from "@store";
-import React, { use, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 
