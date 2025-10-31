@@ -15,7 +15,7 @@ function App() {
             <Route path="/upload" element={<UploadPage />} />
             <Route path="/sign" element={<SignPage />} />
             <Route path="/success" element={<SuccessPage />} />
-            <Route path="*" element={<Navigate to="/upload" replace />} />
+            <Route path="*" element={<Navigate to="/upload" />} />
           </Routes>
         </Router>
       </div>
