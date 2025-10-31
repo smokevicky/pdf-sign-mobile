@@ -92,7 +92,7 @@ export const SignPage = () => {
                 </Typography>
                 <Box sx={{ mt: 5, mb: 1, display: "flex", justifyContent: "center" }}>
                     <img
-                        src="/feather-loading.gif"
+                        src={`${process.env.PUBLIC_URL}/feather-loading.gif`}
                         alt="Feather Loading"
                         style={{ width: "100px", height: "100px" }}
                     />

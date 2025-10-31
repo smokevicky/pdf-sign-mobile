@@ -38,7 +38,7 @@ export const Header = () => {
 				<Box sx={{ display: 'flex', alignItems: 'center' }}>
 					<Avatar
 						alt="Logo"
-						src="/dp.png"
+						src={`${process.env.PUBLIC_URL}/dp.png`}
 						sx={{ bgcolor: 'secondary.main', width: 40, height: 40 }}
 					/>
 				</Box>
