@@ -10,7 +10,7 @@ function App() {
     <Provider store={store}>
       <div className="App">
         <Header />
-        <Router>
+        <Router basename="/pdf-sign-mobile">
           <Routes>
             <Route path="/upload" element={<UploadPage />} />
             <Route path="/sign" element={<SignPage />} />
