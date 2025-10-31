@@ -3,13 +3,28 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { UploadPage, SignPage, SuccessPage } from '@pages';
+import { store } from '@store';
+import { Provider } from 'react-redux';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <Router basename="/pdf-sign-mobile">
+        <App />
+        <Routes>
+          <Route path="/upload" element={<UploadPage />} />
+          <Route path="/sign" element={<SignPage />} />
+          <Route path="/success" element={<SuccessPage />} />
+          <Route path="*" element={<Navigate to="/upload" />} />
+        </Routes>
+      </Router>
+    </Provider>
   </React.StrictMode>
 );
 
